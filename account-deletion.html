@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusão de Conta - Meritíssimo | Account Deletion</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* Language selector */
+    .lang-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 16px 0;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #94a3b8;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+    .lang-btn.active {
+      background: #f59e0b;
+      color: #0f172a;
+      border-color: #f59e0b;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    /* Header */
+    .icon { font-size: 2.8em; text-align: center; margin-bottom: 12px; }
+    h1 {
+      text-align: center;
+      font-size: 1.6em;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+    .app-name {
+      text-align: center;
+      color: #f59e0b;
+      font-size: 0.95em;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    /* Sections */
+    .section {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #f59e0b;
+      font-size: 1.05em;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2 .num {
+      background: #f59e0b;
+      color: #0f172a;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85em;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    p { color: #cbd5e1; margin-bottom: 0.6em; }
+    .email-highlight {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .email-highlight:hover { background: rgba(245, 158, 11, 0.2); }
+
+    /* Lists */
+    .data-list { list-style: none; padding: 0; }
+    .data-list li {
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95em;
+    }
+    .data-list li .icon-sm { font-size: 1.1em; flex-shrink: 0; margin-top: 2px; }
+    .deleted { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.15); }
+    .deleted .icon-sm { color: #ef4444; }
+    .retained { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.15); }
+    .retained .icon-sm { color: #f59e0b; }
+
+    /* Steps */
+    .steps { list-style: none; padding: 0; counter-reset: step; }
+    .steps li {
+      padding: 12px 14px;
+      margin: 8px 0;
+      background: #0f172a;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .steps li .step-num {
+      background: #334155;
+      color: #f59e0b;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85em;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .steps li .step-text { padding-top: 3px; }
+
+    /* Timeline badge */
+    .timeline {
+      text-align: center;
+      margin: 24px 0 8px;
+      padding: 14px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 10px;
+      color: #f59e0b;
+      font-weight: 500;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #334155;
+      margin: 40px 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: #475569;
+      font-size: 0.85em;
+      margin-top: 40px;
+      line-height: 1.6;
+    }
+    .footer a { color: #64748b; text-decoration: none; }
+    .footer a:hover { color: #94a3b8; text-decoration: underline; }
+
+    /* Language toggle visibility */
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    @media (max-width: 480px) {
+      .container { padding: 24px 14px 40px; }
+      h1 { font-size: 1.35em; }
+      .section { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="switchLang('pt')" id="btn-pt">Português</button>
+  <button class="lang-btn" onclick="switchLang('en')" id="btn-en">English</button>
+</div>
+
+<div class="container">
+  <div class="icon">&#9878;</div>
+
+  <!-- ==================== PORTUGUÊS ==================== -->
+  <div class="lang-section active" id="lang-pt">
+
+    <h1>Exclusão de Conta</h1>
+    <p class="app-name">Meritíssimo</p>
+
+    <!-- Etapas -->
+    <div class="section">
+      <h2>Como solicitar a exclusão</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <span class="step-text">Envie um e-mail para <a href="mailto:meritissimo.app@gmail.com?subject=Exclus%C3%A3o%20de%20conta" class="email-highlight">meritissimo.app@gmail.com</a> com o assunto <strong>"Exclusão de conta"</strong>.</span>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <span class="step-text">No corpo do e-mail, informe o <strong>e-mail</strong> ou <strong>nome de usuário</strong> cadastrado na sua conta.</span>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <span class="step-text">Você receberá uma confirmação de recebimento e a exclusão será processada.</span>
+        </li>
+      </ol>
+      <div class="timeline">A exclusão será concluída em até <strong>30 dias</strong> após a confirmação.</div>
+    </div>
+
+    <!-- Dados excluídos -->
+    <div class="section">
+      <h2>Dados que serão excluídos</h2>
+      <ul class="data-list">
+        <li class="deleted">
+          <span class="icon-sm">&#10060;</span>
+          <span><strong>Conta e credenciais de login</strong> — e-mail, senha, identificadores Google/Apple vinculados.</span>
+        </li>
+        <li class="deleted">
+          <span class="icon-sm">&#10060;</span>
+          <span><strong>Histórico de partidas</strong> — salas criadas, participações, votos do júri e papéis atribuídos.</span>
+        </li>
+        <li class="deleted">
+          <span class="icon-sm">&#10060;</span>
+          <span><strong>Dados de perfil</strong> — nome de usuário, nome de exibição e foto de perfil.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Dados mantidos -->
+    <div class="section">
+      <h2>Dados que serão mantidos</h2>
+      <ul class="data-list">
+        <li class="retained">
+          <span class="icon-sm">&#9888;</span>
+          <span><strong>Registros de transações financeiras</strong> — dados de compras e assinaturas processadas via Google Play ou Apple App Store, mantidos por <strong>5 anos</strong> conforme exigência da legislação fiscal brasileira.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p style="color: #64748b; font-size: 0.9em; text-align: center; margin-top: 16px;">
+      Antes de solicitar a exclusão, cancele assinaturas ativas diretamente na Google Play Store ou Apple App Store.
+    </p>
+
+  </div>
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-section" id="lang-en">
+
+    <h1>Account Deletion</h1>
+    <p class="app-name">Meritíssimo</p>
+
+    <!-- Steps -->
+    <div class="section">
+      <h2>How to request deletion</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <span class="step-text">Send an email to <a href="mailto:meritissimo.app@gmail.com?subject=Account%20Deletion" class="email-highlight">meritissimo.app@gmail.com</a> with the subject <strong>"Account Deletion"</strong>.</span>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <span class="step-text">In the email body, include the <strong>email address</strong> or <strong>username</strong> associated with your account.</span>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <span class="step-text">You will receive a confirmation and your deletion request will be processed.</span>
+        </li>
+      </ol>
+      <div class="timeline">Deletion will be completed within <strong>30 days</strong> of confirmation.</div>
+    </div>
+
+    <!-- Data deleted -->
+    <div class="section">
+      <h2>Data that will be deleted</h2>
+      <ul class="data-list">
+        <li class="deleted">
+          <span class="icon-sm">&#10060;</span>
+          <span><strong>Account and login credentials</strong> — email, password, linked Google/Apple identifiers.</span>
+        </li>
+        <li class="deleted">
+          <span class="icon-sm">&#10060;</span>
+          <span><strong>Match history</strong> — rooms created, participations, jury votes, and assigned roles.</span>
+        </li>
+        <li class="deleted">
+          <span class="icon-sm">&#10060;</span>
+          <span><strong>Profile data</strong> — username, display name, and profile picture.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Data retained -->
+    <div class="section">
+      <h2>Data that will be retained</h2>
+      <ul class="data-list">
+        <li class="retained">
+          <span class="icon-sm">&#9888;</span>
+          <span><strong>Financial transaction records</strong> — purchase and subscription data processed through Google Play or Apple App Store, retained for <strong>5 years</strong> as required by Brazilian tax law.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p style="color: #64748b; font-size: 0.9em; text-align: center; margin-top: 16px;">
+      Before requesting deletion, please cancel any active subscriptions directly through the Google Play Store or Apple App Store.
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2026 Meritíssimo Ltda</p>
+    <p><a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a></p>
+    <p style="margin-top: 8px;">
+      <a href="politica-de-privacidade.html">Política de Privacidade</a> &middot;
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </p>
+  </div>
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-section').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.getElementById('btn-' + lang).classList.add('active');
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  }
+</script>
+
+</body>
+</html>

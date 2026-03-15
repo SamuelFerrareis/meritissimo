@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade - Meritíssimo</title>
+  <title>Política de Privacidade - Meritíssimo | Privacy Policy</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -16,62 +16,46 @@
       background: #ffffff;
       font-size: 15px;
     }
-    h1 {
-      color: #0f172a;
-      font-size: 1.6em;
-      margin-bottom: 0.3em;
-      line-height: 1.3;
+    .lang-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
     }
-    .subtitle {
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #e2e8f0;
       color: #64748b;
-      font-size: 0.9em;
-      margin-bottom: 2em;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    h2 {
-      color: #0f172a;
-      font-size: 1.15em;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
-      padding-bottom: 0.3em;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    h3 {
-      color: #334155;
-      font-size: 1em;
-      margin-top: 1.4em;
-      margin-bottom: 0.4em;
-    }
+    .lang-btn:hover { border-color: #1d4ed8; color: #1d4ed8; }
+    .lang-btn.active { background: #0f172a; color: #ffffff; border-color: #0f172a; font-weight: 600; }
+    h1 { color: #0f172a; font-size: 1.6em; margin-bottom: 0.3em; line-height: 1.3; }
+    .subtitle { color: #64748b; font-size: 0.9em; margin-bottom: 2em; }
+    h2 { color: #0f172a; font-size: 1.15em; margin-top: 2em; margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid #e2e8f0; }
+    h3 { color: #334155; font-size: 1em; margin-top: 1.4em; margin-bottom: 0.4em; }
     p { margin: 0.7em 0; color: #374151; }
     ul, ol { padding-left: 22px; margin: 0.6em 0; }
     li { margin: 0.4em 0; color: #374151; }
     a { color: #1d4ed8; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-      font-size: 0.92em;
-    }
-    th, td {
-      border: 1px solid #e2e8f0;
-      padding: 8px 12px;
-      text-align: left;
-    }
+    table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.92em; }
+    th, td { border: 1px solid #e2e8f0; padding: 8px 12px; text-align: left; }
     th { background: #f8fafc; color: #0f172a; font-weight: 600; }
     td { color: #374151; }
-    .toc {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 2em;
-    }
+    .toc { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-bottom: 2em; }
     .toc-title { font-weight: 600; color: #0f172a; margin-bottom: 0.5em; }
     .toc ol { padding-left: 20px; margin: 0; }
     .toc li { margin: 0.25em 0; font-size: 0.93em; }
     .toc a { color: #475569; }
     .toc a:hover { color: #1d4ed8; }
     strong { color: #1e293b; }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
     @media (max-width: 600px) {
       body { padding: 16px 12px 40px; font-size: 14px; }
       h1 { font-size: 1.35em; }
@@ -82,30 +66,38 @@
 </head>
 <body>
 
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="switchLang('pt')" id="btn-pt">Português</button>
+  <button class="lang-btn" onclick="switchLang('en')" id="btn-en">English</button>
+</div>
+
+<!-- ==================== PORTUGUÊS ==================== -->
+<div class="lang-section active" id="lang-pt">
+
 <h1>Política de Privacidade</h1>
 <p class="subtitle">Última atualização: 15 de março de 2026</p>
 
 <div class="toc">
   <div class="toc-title">Sumário</div>
   <ol>
-    <li><a href="#controlador">Identificação do Controlador</a></li>
-    <li><a href="#dados">Dados Pessoais Coletados</a></li>
-    <li><a href="#finalidade">Finalidade do Tratamento</a></li>
-    <li><a href="#base-legal">Base Legal para o Tratamento</a></li>
-    <li><a href="#compartilhamento">Compartilhamento de Dados</a></li>
-    <li><a href="#retencao">Duração do Tratamento e Retenção</a></li>
-    <li><a href="#direitos">Direitos do Titular dos Dados</a></li>
-    <li><a href="#exclusao">Exclusão de Conta</a></li>
-    <li><a href="#camera">Uso da Câmera</a></li>
-    <li><a href="#cookies">Cookies e Armazenamento Local</a></li>
-    <li><a href="#seguranca">Segurança dos Dados</a></li>
-    <li><a href="#menores">Menores de Idade</a></li>
-    <li><a href="#alteracoes">Alterações nesta Política</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#pt-controlador">Identificação do Controlador</a></li>
+    <li><a href="#pt-dados">Dados Pessoais Coletados</a></li>
+    <li><a href="#pt-finalidade">Finalidade do Tratamento</a></li>
+    <li><a href="#pt-base-legal">Base Legal para o Tratamento</a></li>
+    <li><a href="#pt-compartilhamento">Compartilhamento de Dados</a></li>
+    <li><a href="#pt-retencao">Duração do Tratamento e Retenção</a></li>
+    <li><a href="#pt-direitos">Direitos do Titular dos Dados</a></li>
+    <li><a href="#pt-exclusao">Exclusão de Conta</a></li>
+    <li><a href="#pt-camera">Uso da Câmera</a></li>
+    <li><a href="#pt-cookies">Cookies e Armazenamento Local</a></li>
+    <li><a href="#pt-seguranca">Segurança dos Dados</a></li>
+    <li><a href="#pt-menores">Menores de Idade</a></li>
+    <li><a href="#pt-alteracoes">Alterações nesta Política</a></li>
+    <li><a href="#pt-contato">Contato</a></li>
   </ol>
 </div>
 
-<h2 id="controlador">1. Identificação do Controlador</h2>
+<h2 id="pt-controlador">1. Identificação do Controlador</h2>
 <p>O aplicativo <strong>Meritíssimo</strong> é desenvolvido e mantido por:</p>
 <ul>
   <li><strong>Razão Social:</strong> Meritíssimo Ltda</li>
@@ -114,14 +106,12 @@
 </ul>
 <p>Para os fins da Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), a Meritíssimo Ltda atua como <strong>controladora</strong> dos dados pessoais dos usuários.</p>
 
-<h2 id="dados">2. Dados Pessoais Coletados</h2>
+<h2 id="pt-dados">2. Dados Pessoais Coletados</h2>
 <p>Coletamos os seguintes dados pessoais, de acordo com a finalidade de cada funcionalidade do aplicativo:</p>
 
 <h3>2.1. Dados fornecidos pelo usuário</h3>
 <table>
-  <thead>
-    <tr><th>Dado</th><th>Quando é coletado</th></tr>
-  </thead>
+  <thead><tr><th>Dado</th><th>Quando é coletado</th></tr></thead>
   <tbody>
     <tr><td>Nome de usuário</td><td>Cadastro de conta</td></tr>
     <tr><td>Endereço de email</td><td>Cadastro de conta, login com Google ou Apple</td></tr>
@@ -132,9 +122,7 @@
 
 <h3>2.2. Dados obtidos de serviços de terceiros</h3>
 <table>
-  <thead>
-    <tr><th>Dado</th><th>Fonte</th></tr>
-  </thead>
+  <thead><tr><th>Dado</th><th>Fonte</th></tr></thead>
   <tbody>
     <tr><td>Identificador Google (Google ID)</td><td>Google Sign-In</td></tr>
     <tr><td>Identificador Apple (Apple ID)</td><td>Apple Sign-In</td></tr>
@@ -145,9 +133,7 @@
 
 <h3>2.3. Dados gerados pelo uso do aplicativo</h3>
 <table>
-  <thead>
-    <tr><th>Dado</th><th>Descrição</th></tr>
-  </thead>
+  <thead><tr><th>Dado</th><th>Descrição</th></tr></thead>
   <tbody>
     <tr><td>Participação em salas de jogo</td><td>Registro de salas criadas ou ingressadas</td></tr>
     <tr><td>Votos do júri</td><td>Votos realizados durante sessões de jogo</td></tr>
@@ -157,9 +143,7 @@
 
 <h3>2.4. Dados armazenados localmente (não enviados ao servidor)</h3>
 <table>
-  <thead>
-    <tr><th>Dado</th><th>Descrição</th></tr>
-  </thead>
+  <thead><tr><th>Dado</th><th>Descrição</th></tr></thead>
   <tbody>
     <tr><td>Preferência de idioma</td><td>Idioma selecionado pelo usuário, armazenado localmente no dispositivo</td></tr>
   </tbody>
@@ -167,7 +151,7 @@
 
 <p><strong>Importante:</strong> O Meritíssimo <strong>não</strong> coleta dados de localização, não exibe anúncios, não utiliza Google AdSense e não realiza rastreamento comportamental para fins publicitários.</p>
 
-<h2 id="finalidade">3. Finalidade do Tratamento</h2>
+<h2 id="pt-finalidade">3. Finalidade do Tratamento</h2>
 <p>Os dados pessoais são tratados para as seguintes finalidades:</p>
 <ul>
   <li><strong>Autenticação e gerenciamento de conta:</strong> Permitir o cadastro, login e identificação do usuário no aplicativo.</li>
@@ -176,7 +160,7 @@
   <li><strong>Melhoria do serviço:</strong> Analisar o uso do aplicativo para aprimorar funcionalidades e corrigir problemas técnicos.</li>
 </ul>
 
-<h2 id="base-legal">4. Base Legal para o Tratamento</h2>
+<h2 id="pt-base-legal">4. Base Legal para o Tratamento</h2>
 <p>O tratamento dos seus dados pessoais é realizado com base nas seguintes hipóteses legais previstas na LGPD (Art. 7º):</p>
 <ul>
   <li><strong>Consentimento (Art. 7º, I):</strong> Para a criação de conta e uso das funcionalidades que exigem cadastro.</li>
@@ -184,12 +168,10 @@
   <li><strong>Interesse legítimo (Art. 7º, IX):</strong> Para melhoria do serviço e segurança do aplicativo, sempre respeitando os direitos e liberdades fundamentais do titular.</li>
 </ul>
 
-<h2 id="compartilhamento">5. Compartilhamento de Dados</h2>
+<h2 id="pt-compartilhamento">5. Compartilhamento de Dados</h2>
 <p>Compartilhamos dados pessoais com os seguintes terceiros, estritamente para as finalidades indicadas:</p>
 <table>
-  <thead>
-    <tr><th>Terceiro</th><th>Dados compartilhados</th><th>Finalidade</th></tr>
-  </thead>
+  <thead><tr><th>Terceiro</th><th>Dados compartilhados</th><th>Finalidade</th></tr></thead>
   <tbody>
     <tr><td>Google (Google Sign-In)</td><td>Tokens OAuth, email, nome, foto</td><td>Autenticação</td></tr>
     <tr><td>Apple (Apple Sign-In)</td><td>Token de identidade, email, nome</td><td>Autenticação</td></tr>
@@ -204,7 +186,7 @@
   <li>Não realizamos transferência internacional de dados, exceto quando necessário para o funcionamento dos serviços de autenticação (Google e Apple) e gerenciamento de compras (RevenueCat), cujos servidores podem estar localizados fora do Brasil.</li>
 </ul>
 
-<h2 id="retencao">6. Duração do Tratamento e Retenção</h2>
+<h2 id="pt-retencao">6. Duração do Tratamento e Retenção</h2>
 <ul>
   <li><strong>Dados da conta:</strong> Mantidos enquanto a conta do usuário estiver ativa.</li>
   <li><strong>Dados de sessões de jogo:</strong> Mantidos enquanto a sala de jogo existir no sistema.</li>
@@ -212,7 +194,7 @@
   <li><strong>Após exclusão da conta:</strong> Os dados pessoais serão removidos em até 30 (trinta) dias, exceto quando houver obrigação legal de retenção.</li>
 </ul>
 
-<h2 id="direitos">7. Direitos do Titular dos Dados</h2>
+<h2 id="pt-direitos">7. Direitos do Titular dos Dados</h2>
 <p>De acordo com a LGPD (Art. 18), você, como titular dos dados, tem os seguintes direitos:</p>
 <ol>
   <li><strong>Confirmação</strong> da existência de tratamento dos seus dados pessoais.</li>
@@ -227,11 +209,11 @@
 </ol>
 <p>Para exercer qualquer um desses direitos, entre em contato pelo email <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a>. Responderemos à sua solicitação em até <strong>15 (quinze) dias úteis</strong>, conforme previsto na legislação.</p>
 
-<h2 id="exclusao">8. Exclusão de Conta</h2>
+<h2 id="pt-exclusao">8. Exclusão de Conta</h2>
 <p>Você pode solicitar a exclusão da sua conta e de todos os dados pessoais associados a ela a qualquer momento. Para isso:</p>
 <ol>
   <li>Envie um email para <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a> com o assunto <strong>"Exclusão de Conta"</strong>, informando o email cadastrado na conta.</li>
-  <li>Confirmaremos o recebimento e processaremos a exclusão em até <strong>15 (quinze) dias úteis</strong>.</li>
+  <li>Confirmaremos o recebimento e processaremos a exclusão em até <strong>30 (trinta) dias</strong>.</li>
 </ol>
 <p>Ao excluir sua conta:</p>
 <ul>
@@ -239,8 +221,9 @@
   <li>Dados de participação em salas de jogo serão desvinculados da sua identidade.</li>
   <li>Assinaturas ativas deverão ser canceladas diretamente na Google Play Store ou Apple App Store antes da exclusão.</li>
 </ul>
+<p>Para mais detalhes, consulte nossa <a href="account-deletion.html">página de exclusão de conta</a>.</p>
 
-<h2 id="camera">9. Uso da Câmera</h2>
+<h2 id="pt-camera">9. Uso da Câmera</h2>
 <p>O aplicativo solicita acesso à câmera do dispositivo <strong>exclusivamente</strong> para a leitura de QR Codes, que permitem ao jogador ingressar em salas de jogo e receber a atribuição de papéis.</p>
 <ul>
   <li>As imagens capturadas pela câmera são processadas <strong>localmente no dispositivo</strong>.</li>
@@ -248,14 +231,14 @@
   <li>Você pode revogar a permissão de câmera a qualquer momento nas configurações do seu dispositivo.</li>
 </ul>
 
-<h2 id="cookies">10. Cookies e Armazenamento Local</h2>
+<h2 id="pt-cookies">10. Cookies e Armazenamento Local</h2>
 <ul>
   <li><strong>Cookies de sessão:</strong> Utilizamos cookies HTTP-only para manter sua autenticação ativa. Esses cookies contêm apenas um identificador de sessão, expiram após 7 dias e são transmitidos de forma segura (atributos Secure e SameSite).</li>
   <li><strong>Armazenamento local (AsyncStorage):</strong> A preferência de idioma selecionada é armazenada localmente no dispositivo e não é enviada aos nossos servidores.</li>
 </ul>
 <p>Não utilizamos cookies de rastreamento, cookies de publicidade ou tecnologias similares.</p>
 
-<h2 id="seguranca">11. Segurança dos Dados</h2>
+<h2 id="pt-seguranca">11. Segurança dos Dados</h2>
 <p>Adotamos medidas técnicas e organizacionais para proteger seus dados pessoais contra acesso não autorizado, destruição, perda, alteração ou divulgação indevida, incluindo:</p>
 <ul>
   <li>Senhas armazenadas com hash criptográfico (scrypt) — nunca em texto simples.</li>
@@ -265,11 +248,11 @@
   <li>Comunicação em tempo real via WebSocket protegida por autenticação de sessão.</li>
 </ul>
 
-<h2 id="menores">12. Menores de Idade</h2>
+<h2 id="pt-menores">12. Menores de Idade</h2>
 <p>O Meritíssimo não é direcionado a menores de 13 (treze) anos. Não coletamos intencionalmente dados pessoais de crianças. Se tomarmos conhecimento de que coletamos dados de uma criança menor de 13 anos sem o consentimento verificável dos pais ou responsáveis, tomaremos medidas para excluir essas informações o mais rápido possível.</p>
 <p>Se você é pai, mãe ou responsável legal e acredita que seu filho nos forneceu dados pessoais, entre em contato pelo email <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a>.</p>
 
-<h2 id="alteracoes">13. Alterações nesta Política</h2>
+<h2 id="pt-alteracoes">13. Alterações nesta Política</h2>
 <p>Podemos atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou por exigências legais. Em caso de alterações significativas:</p>
 <ul>
   <li>Atualizaremos a data de "Última atualização" no topo desta página.</li>
@@ -277,13 +260,224 @@
 </ul>
 <p>Recomendamos que você revise esta política regularmente para se manter informado sobre como protegemos seus dados.</p>
 
-<h2 id="contato">14. Contato</h2>
+<h2 id="pt-contato">14. Contato</h2>
 <p>Se você tiver dúvidas, reclamações ou quiser exercer seus direitos relacionados a esta Política de Privacidade ou ao tratamento dos seus dados pessoais, entre em contato:</p>
 <ul>
   <li><strong>Email:</strong> <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a></li>
   <li><strong>Prazo de resposta:</strong> Até 15 (quinze) dias úteis</li>
 </ul>
 <p>Caso não fique satisfeito com a resposta, você poderá apresentar reclamação à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>, nos termos da LGPD.</p>
+
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="lang-section" id="lang-en">
+
+<h1>Privacy Policy</h1>
+<p class="subtitle">Last updated: March 15, 2026</p>
+
+<div class="toc">
+  <div class="toc-title">Table of Contents</div>
+  <ol>
+    <li><a href="#en-controller">Data Controller</a></li>
+    <li><a href="#en-data">Personal Data Collected</a></li>
+    <li><a href="#en-purpose">Purpose of Processing</a></li>
+    <li><a href="#en-legal-basis">Legal Basis for Processing</a></li>
+    <li><a href="#en-sharing">Data Sharing</a></li>
+    <li><a href="#en-retention">Data Retention</a></li>
+    <li><a href="#en-rights">Data Subject Rights</a></li>
+    <li><a href="#en-deletion">Account Deletion</a></li>
+    <li><a href="#en-camera">Camera Usage</a></li>
+    <li><a href="#en-cookies">Cookies and Local Storage</a></li>
+    <li><a href="#en-security">Data Security</a></li>
+    <li><a href="#en-children">Children's Privacy</a></li>
+    <li><a href="#en-changes">Changes to This Policy</a></li>
+    <li><a href="#en-contact">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="en-controller">1. Data Controller</h2>
+<p>The <strong>Meritíssimo</strong> application is developed and maintained by:</p>
+<ul>
+  <li><strong>Company:</strong> Meritíssimo Ltda</li>
+  <li><strong>Contact email:</strong> <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a></li>
+  <li><strong>Application:</strong> Meritíssimo (available on the Google Play Store and Apple App Store)</li>
+</ul>
+<p>For the purposes of the Brazilian General Data Protection Law (LGPD — Law No. 13,709/2018), Meritíssimo Ltda acts as the <strong>data controller</strong> of users' personal data.</p>
+
+<h2 id="en-data">2. Personal Data Collected</h2>
+<p>We collect the following personal data according to each feature's purpose:</p>
+
+<h3>2.1. Data provided by the user</h3>
+<table>
+  <thead><tr><th>Data</th><th>When collected</th></tr></thead>
+  <tbody>
+    <tr><td>Username</td><td>Account registration</td></tr>
+    <tr><td>Email address</td><td>Account registration, Google or Apple login</td></tr>
+    <tr><td>Password (stored as hash)</td><td>Email account registration</td></tr>
+    <tr><td>Display name</td><td>Google or Apple Sign-In</td></tr>
+  </tbody>
+</table>
+
+<h3>2.2. Data obtained from third-party services</h3>
+<table>
+  <thead><tr><th>Data</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr><td>Google Identifier (Google ID)</td><td>Google Sign-In</td></tr>
+    <tr><td>Apple Identifier (Apple ID)</td><td>Apple Sign-In</td></tr>
+    <tr><td>Profile picture URL</td><td>Google Sign-In</td></tr>
+    <tr><td>Subscription status</td><td>RevenueCat (purchase management)</td></tr>
+  </tbody>
+</table>
+
+<h3>2.3. Data generated by app usage</h3>
+<table>
+  <thead><tr><th>Data</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td>Game room participation</td><td>Record of rooms created or joined</td></tr>
+    <tr><td>Jury votes</td><td>Votes cast during game sessions</td></tr>
+    <tr><td>Session data</td><td>Authentication cookies (active session identification)</td></tr>
+  </tbody>
+</table>
+
+<h3>2.4. Data stored locally (not sent to server)</h3>
+<table>
+  <thead><tr><th>Data</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td>Language preference</td><td>Language selected by the user, stored locally on the device</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Important:</strong> Meritíssimo does <strong>not</strong> collect location data, does not display ads, does not use Google AdSense, and does not perform behavioral tracking for advertising purposes.</p>
+
+<h2 id="en-purpose">3. Purpose of Processing</h2>
+<p>Personal data is processed for the following purposes:</p>
+<ul>
+  <li><strong>Authentication and account management:</strong> To enable registration, login, and user identification within the app.</li>
+  <li><strong>Game functionality:</strong> To create and manage game rooms, assign roles, record votes, and enable real-time communication between players via WebSocket.</li>
+  <li><strong>Purchase management:</strong> To process subscriptions and in-app purchases through RevenueCat.</li>
+  <li><strong>Service improvement:</strong> To analyze app usage to improve features and fix technical issues.</li>
+</ul>
+
+<h2 id="en-legal-basis">4. Legal Basis for Processing</h2>
+<p>Your personal data is processed based on the following legal grounds under LGPD (Art. 7):</p>
+<ul>
+  <li><strong>Consent (Art. 7, I):</strong> For account creation and use of features that require registration.</li>
+  <li><strong>Contract performance (Art. 7, V):</strong> To provide game services as per the Terms of Use.</li>
+  <li><strong>Legitimate interest (Art. 7, IX):</strong> For service improvement and app security, always respecting the fundamental rights and freedoms of the data subject.</li>
+</ul>
+
+<h2 id="en-sharing">5. Data Sharing</h2>
+<p>We share personal data with the following third parties, strictly for the stated purposes:</p>
+<table>
+  <thead><tr><th>Third Party</th><th>Data Shared</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td>Google (Google Sign-In)</td><td>OAuth tokens, email, name, photo</td><td>Authentication</td></tr>
+    <tr><td>Apple (Apple Sign-In)</td><td>Identity token, email, name</td><td>Authentication</td></tr>
+    <tr><td>RevenueCat</td><td>Internal user ID, purchase transactions</td><td>Subscription and purchase management</td></tr>
+    <tr><td>Hosting provider (database)</td><td>All data stored in the database</td><td>Data storage and processing</td></tr>
+  </tbody>
+</table>
+<p><strong>We declare that:</strong></p>
+<ul>
+  <li>We do not sell personal data to third parties.</li>
+  <li>We do not share data with advertising networks.</li>
+  <li>We do not transfer data internationally, except when necessary for authentication services (Google and Apple) and purchase management (RevenueCat), whose servers may be located outside Brazil.</li>
+</ul>
+
+<h2 id="en-retention">6. Data Retention</h2>
+<ul>
+  <li><strong>Account data:</strong> Retained while the user's account is active.</li>
+  <li><strong>Game session data:</strong> Retained while the game room exists in the system.</li>
+  <li><strong>Session cookies:</strong> Expire automatically after 7 (seven) days.</li>
+  <li><strong>After account deletion:</strong> Personal data will be removed within 30 (thirty) days, except where legal retention obligations apply.</li>
+</ul>
+
+<h2 id="en-rights">7. Data Subject Rights</h2>
+<p>Under LGPD (Art. 18), as a data subject you have the following rights:</p>
+<ol>
+  <li><strong>Confirmation</strong> of the existence of processing of your personal data.</li>
+  <li><strong>Access</strong> to the personal data we hold about you.</li>
+  <li><strong>Correction</strong> of incomplete, inaccurate, or outdated data.</li>
+  <li><strong>Anonymization, blocking, or deletion</strong> of unnecessary, excessive, or non-compliant data.</li>
+  <li><strong>Portability</strong> of data to another service provider, upon express request.</li>
+  <li><strong>Deletion</strong> of personal data processed based on consent.</li>
+  <li><strong>Information</strong> about public and private entities with whom we share your data.</li>
+  <li><strong>Information</strong> about the possibility of not providing consent and the consequences of refusal.</li>
+  <li><strong>Revocation of consent</strong> at any time, free of charge and through simplified means.</li>
+</ol>
+<p>To exercise any of these rights, contact us at <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a>. We will respond to your request within <strong>15 (fifteen) business days</strong>, as required by law.</p>
+
+<h2 id="en-deletion">8. Account Deletion</h2>
+<p>You may request the deletion of your account and all associated personal data at any time. To do so:</p>
+<ol>
+  <li>Send an email to <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a> with the subject <strong>"Account Deletion"</strong>, including the email address registered to your account.</li>
+  <li>We will confirm receipt and process the deletion within <strong>30 (thirty) days</strong>.</li>
+</ol>
+<p>Upon account deletion:</p>
+<ul>
+  <li>All personal data will be permanently removed from our database.</li>
+  <li>Game room participation data will be disassociated from your identity.</li>
+  <li>Active subscriptions must be canceled directly through the Google Play Store or Apple App Store before deletion.</li>
+</ul>
+<p>For more details, see our <a href="account-deletion.html">account deletion page</a>.</p>
+
+<h2 id="en-camera">9. Camera Usage</h2>
+<p>The app requests access to the device camera <strong>exclusively</strong> for scanning QR Codes, which allow players to join game rooms and receive role assignments.</p>
+<ul>
+  <li>Camera images are processed <strong>locally on the device</strong>.</li>
+  <li>No images or video are transmitted, stored, or shared with servers or third parties.</li>
+  <li>You can revoke camera permission at any time in your device settings.</li>
+</ul>
+
+<h2 id="en-cookies">10. Cookies and Local Storage</h2>
+<ul>
+  <li><strong>Session cookies:</strong> We use HTTP-only cookies to keep your authentication active. These cookies contain only a session identifier, expire after 7 days, and are transmitted securely (Secure and SameSite attributes).</li>
+  <li><strong>Local storage (AsyncStorage):</strong> The selected language preference is stored locally on the device and is not sent to our servers.</li>
+</ul>
+<p>We do not use tracking cookies, advertising cookies, or similar technologies.</p>
+
+<h2 id="en-security">11. Data Security</h2>
+<p>We adopt technical and organizational measures to protect your personal data against unauthorized access, destruction, loss, alteration, or improper disclosure, including:</p>
+<ul>
+  <li>Passwords stored with cryptographic hash (scrypt) — never in plain text.</li>
+  <li>Communication protected by HTTPS (TLS encryption) in production.</li>
+  <li>Rate limiting on authentication endpoints to prevent brute-force attacks.</li>
+  <li>Session cookies with HTTP-only, Secure, and SameSite attributes.</li>
+  <li>Real-time WebSocket communication protected by session authentication.</li>
+</ul>
+
+<h2 id="en-children">12. Children's Privacy</h2>
+<p>Meritíssimo is not directed at children under 13 (thirteen) years of age. We do not intentionally collect personal data from children. If we become aware that we have collected data from a child under 13 without verifiable parental consent, we will take steps to delete that information as soon as possible.</p>
+<p>If you are a parent or legal guardian and believe your child has provided us with personal data, please contact us at <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a>.</p>
+
+<h2 id="en-changes">13. Changes to This Policy</h2>
+<p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. In the event of significant changes:</p>
+<ul>
+  <li>We will update the "Last updated" date at the top of this page.</li>
+  <li>We will notify users through the app or by email, when applicable.</li>
+</ul>
+<p>We recommend that you review this policy regularly to stay informed about how we protect your data.</p>
+
+<h2 id="en-contact">14. Contact</h2>
+<p>If you have questions, complaints, or wish to exercise your rights related to this Privacy Policy or the processing of your personal data, please contact us:</p>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a></li>
+  <li><strong>Response time:</strong> Up to 15 (fifteen) business days</li>
+</ul>
+<p>If you are not satisfied with our response, you may file a complaint with the <strong>Brazilian National Data Protection Authority (ANPD)</strong>, under the terms of the LGPD.</p>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-section').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.lang-btn').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.getElementById('btn-' + lang).classList.add('active');
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+}
+</script>
 
 </body>
 </html>

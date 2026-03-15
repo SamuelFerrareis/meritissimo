@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Termos de Uso - Meritíssimo</title>
+  <title>Termos de Uso - Meritíssimo | Terms of Use</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -16,49 +16,42 @@
       background: #ffffff;
       font-size: 15px;
     }
-    h1 {
-      color: #0f172a;
-      font-size: 1.6em;
-      margin-bottom: 0.3em;
-      line-height: 1.3;
+    .lang-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
     }
-    .subtitle {
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #e2e8f0;
       color: #64748b;
-      font-size: 0.9em;
-      margin-bottom: 2em;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    h2 {
-      color: #0f172a;
-      font-size: 1.15em;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
-      padding-bottom: 0.3em;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    h3 {
-      color: #334155;
-      font-size: 1em;
-      margin-top: 1.4em;
-      margin-bottom: 0.4em;
-    }
+    .lang-btn:hover { border-color: #1d4ed8; color: #1d4ed8; }
+    .lang-btn.active { background: #0f172a; color: #ffffff; border-color: #0f172a; font-weight: 600; }
+    h1 { color: #0f172a; font-size: 1.6em; margin-bottom: 0.3em; line-height: 1.3; }
+    .subtitle { color: #64748b; font-size: 0.9em; margin-bottom: 2em; }
+    h2 { color: #0f172a; font-size: 1.15em; margin-top: 2em; margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid #e2e8f0; }
+    h3 { color: #334155; font-size: 1em; margin-top: 1.4em; margin-bottom: 0.4em; }
     p { margin: 0.7em 0; color: #374151; }
     ul, ol { padding-left: 22px; margin: 0.6em 0; }
     li { margin: 0.4em 0; color: #374151; }
     a { color: #1d4ed8; text-decoration: none; }
     a:hover { text-decoration: underline; }
     strong { color: #1e293b; }
-    .toc {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 2em;
-    }
+    .toc { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-bottom: 2em; }
     .toc-title { font-weight: 600; color: #0f172a; margin-bottom: 0.5em; }
     .toc ol { padding-left: 20px; margin: 0; }
     .toc li { margin: 0.25em 0; font-size: 0.93em; }
     .toc a { color: #475569; }
     .toc a:hover { color: #1d4ed8; }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
     @media (max-width: 600px) {
       body { padding: 16px 12px 40px; font-size: 14px; }
       h1 { font-size: 1.35em; }
@@ -67,33 +60,41 @@
 </head>
 <body>
 
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="switchLang('pt')" id="btn-pt">Português</button>
+  <button class="lang-btn" onclick="switchLang('en')" id="btn-en">English</button>
+</div>
+
+<!-- ==================== PORTUGUÊS ==================== -->
+<div class="lang-section active" id="lang-pt">
+
 <h1>Termos de Uso</h1>
 <p class="subtitle">Última atualização: 15 de março de 2026</p>
 
 <div class="toc">
   <div class="toc-title">Sumário</div>
   <ol>
-    <li><a href="#aceitacao">Aceitação dos Termos</a></li>
-    <li><a href="#servico">Descrição do Serviço</a></li>
-    <li><a href="#conta">Cadastro e Conta</a></li>
-    <li><a href="#uso-permitido">Uso Permitido</a></li>
-    <li><a href="#propriedade">Propriedade Intelectual</a></li>
-    <li><a href="#compras">Compras e Assinaturas</a></li>
-    <li><a href="#conteudo">Conteúdo do Jogo</a></li>
-    <li><a href="#limitacao">Limitação de Responsabilidade</a></li>
-    <li><a href="#suspensao">Suspensão e Cancelamento</a></li>
-    <li><a href="#exclusao">Exclusão de Conta</a></li>
-    <li><a href="#alteracoes">Alterações nos Termos</a></li>
-    <li><a href="#lei">Lei Aplicável e Foro</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#pt-aceitacao">Aceitação dos Termos</a></li>
+    <li><a href="#pt-servico">Descrição do Serviço</a></li>
+    <li><a href="#pt-conta">Cadastro e Conta</a></li>
+    <li><a href="#pt-uso">Uso Permitido</a></li>
+    <li><a href="#pt-propriedade">Propriedade Intelectual</a></li>
+    <li><a href="#pt-compras">Compras e Assinaturas</a></li>
+    <li><a href="#pt-conteudo">Conteúdo do Jogo</a></li>
+    <li><a href="#pt-limitacao">Limitação de Responsabilidade</a></li>
+    <li><a href="#pt-suspensao">Suspensão e Cancelamento</a></li>
+    <li><a href="#pt-exclusao">Exclusão de Conta</a></li>
+    <li><a href="#pt-alteracoes">Alterações nos Termos</a></li>
+    <li><a href="#pt-lei">Lei Aplicável e Foro</a></li>
+    <li><a href="#pt-contato">Contato</a></li>
   </ol>
 </div>
 
-<h2 id="aceitacao">1. Aceitação dos Termos</h2>
+<h2 id="pt-aceitacao">1. Aceitação dos Termos</h2>
 <p>Ao baixar, instalar ou utilizar o aplicativo <strong>Meritíssimo</strong>, você concorda integralmente com estes Termos de Uso, bem como com a nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>. Caso não concorde com qualquer disposição destes termos, não utilize o aplicativo.</p>
 <p>Estes termos constituem um acordo legal entre você (doravante "Usuário") e a <strong>Meritíssimo Ltda</strong> (doravante "Meritíssimo" ou "nós").</p>
 
-<h2 id="servico">2. Descrição do Serviço</h2>
+<h2 id="pt-servico">2. Descrição do Serviço</h2>
 <p>O Meritíssimo é um <strong>aplicativo de jogo de simulação jurídica</strong> que oferece experiências interativas de tribunal colaborativo. O aplicativo permite que os jogadores:</p>
 <ul>
   <li>Criem e participem de salas de jogo temáticas com cenários jurídicos.</li>
@@ -103,7 +104,7 @@
 </ul>
 <p>O Meritíssimo é um <strong>jogo de entretenimento</strong>. Os cenários apresentados são inteiramente fictícios e não constituem aconselhamento jurídico.</p>
 
-<h2 id="conta">3. Cadastro e Conta</h2>
+<h2 id="pt-conta">3. Cadastro e Conta</h2>
 <p>Para utilizar o aplicativo, você poderá:</p>
 <ul>
   <li>Criar uma conta com email e senha.</li>
@@ -118,7 +119,7 @@
   <li>Notificar imediatamente em caso de uso não autorizado da sua conta.</li>
 </ul>
 
-<h2 id="uso-permitido">4. Uso Permitido</h2>
+<h2 id="pt-uso">4. Uso Permitido</h2>
 <p>Ao utilizar o Meritíssimo, você concorda em <strong>não</strong>:</p>
 <ul>
   <li>Utilizar o aplicativo para fins ilegais ou contrários à boa-fé e à ordem pública.</li>
@@ -130,7 +131,7 @@
   <li>Causar danos aos sistemas (hardware e software) do Meritíssimo, de seus fornecedores ou de terceiros.</li>
 </ul>
 
-<h2 id="propriedade">5. Propriedade Intelectual</h2>
+<h2 id="pt-propriedade">5. Propriedade Intelectual</h2>
 <p>Todos os direitos de propriedade intelectual relacionados ao Meritíssimo, incluindo mas não se limitando a:</p>
 <ul>
   <li>Código-fonte do aplicativo</li>
@@ -140,20 +141,20 @@
   <li>Textos, imagens e demais conteúdos</li>
 </ul>
 <p>São de propriedade exclusiva da <strong>Meritíssimo Ltda</strong> ou de seus licenciadores e são protegidos pelas leis brasileiras de direitos autorais e propriedade intelectual.</p>
-<p>É concedida ao usuário uma <strong>licença limitada, pessoal, não exclusiva, intransferível e revogável</strong> para uso do aplicativo conforme estes termos. Esta licença não confere ao usuário qualquer direito de propriedade sobre o aplicativo ou seu conteúdo.</p>
+<p>É concedida ao usuário uma <strong>licença limitada, pessoal, não exclusiva, intransferível e revogável</strong> para uso do aplicativo conforme estes termos.</p>
 
-<h2 id="compras">6. Compras e Assinaturas</h2>
-<p>O Meritíssimo pode oferecer conteúdos e funcionalidades adicionais por meio de compras dentro do aplicativo (in-app purchases) e assinaturas.</p>
+<h2 id="pt-compras">6. Compras e Assinaturas</h2>
+<p>O Meritíssimo pode oferecer conteúdos e funcionalidades adicionais por meio de compras dentro do aplicativo e assinaturas.</p>
 <ul>
   <li>Todas as compras são processadas pela <strong>Google Play Store</strong> ou <strong>Apple App Store</strong>, conforme a plataforma utilizada.</li>
   <li>O gerenciamento de assinaturas é realizado pelo serviço <strong>RevenueCat</strong>.</li>
   <li>Os preços são exibidos na moeda local antes da confirmação da compra.</li>
   <li>Assinaturas são renovadas automaticamente, salvo cancelamento pelo usuário antes do término do período vigente.</li>
   <li>Para cancelar uma assinatura, acesse as configurações da sua conta na Google Play Store ou Apple App Store.</li>
-  <li>A política de reembolso segue as regras da respectiva loja de aplicativos (Google Play ou Apple App Store).</li>
+  <li>A política de reembolso segue as regras da respectiva loja de aplicativos.</li>
 </ul>
 
-<h2 id="conteudo">7. Conteúdo do Jogo</h2>
+<h2 id="pt-conteudo">7. Conteúdo do Jogo</h2>
 <p><strong>Aviso importante:</strong> Todos os cenários, casos, personagens, evidências e situações apresentados no Meritíssimo são <strong>inteiramente fictícios</strong> e criados exclusivamente para fins de entretenimento.</p>
 <ul>
   <li>Qualquer semelhança com pessoas reais, vivas ou falecidas, eventos ou situações reais é mera coincidência.</li>
@@ -161,16 +162,16 @@
   <li>O Meritíssimo não se responsabiliza pelo uso das informações apresentadas no jogo fora do contexto de entretenimento.</li>
 </ul>
 
-<h2 id="limitacao">8. Limitação de Responsabilidade</h2>
+<h2 id="pt-limitacao">8. Limitação de Responsabilidade</h2>
 <p>Na máxima extensão permitida pela legislação aplicável:</p>
 <ul>
   <li>O Meritíssimo é fornecido "como está" (<em>as is</em>), sem garantias expressas ou implícitas de qualquer natureza.</li>
   <li>Não garantimos que o aplicativo estará disponível ininterruptamente, livre de erros ou que atenderá a todas as suas expectativas.</li>
   <li>Não seremos responsáveis por danos indiretos, incidentais, especiais ou consequentes decorrentes do uso ou da impossibilidade de uso do aplicativo.</li>
-  <li>Não nos responsabilizamos por conteúdos gerados por usuários durante as sessões de jogo (como mensagens ou interações entre jogadores).</li>
+  <li>Não nos responsabilizamos por conteúdos gerados por usuários durante as sessões de jogo.</li>
 </ul>
 
-<h2 id="suspensao">9. Suspensão e Cancelamento</h2>
+<h2 id="pt-suspensao">9. Suspensão e Cancelamento</h2>
 <p>Reservamo-nos o direito de suspender ou encerrar sua conta, a nosso critério, caso:</p>
 <ul>
   <li>Você viole qualquer disposição destes Termos de Uso.</li>
@@ -178,30 +179,181 @@
   <li>Haja suspeita de uso fraudulento ou não autorizado da conta.</li>
   <li>Seja necessário por motivos legais ou de segurança.</li>
 </ul>
-<p>Em caso de suspensão ou encerramento, notificaremos o usuário pelo email cadastrado, informando o motivo e o prazo, quando aplicável.</p>
+<p>Em caso de suspensão ou encerramento, notificaremos o usuário pelo email cadastrado.</p>
 
-<h2 id="exclusao">10. Exclusão de Conta</h2>
+<h2 id="pt-exclusao">10. Exclusão de Conta</h2>
 <p>Você pode solicitar a exclusão da sua conta a qualquer momento, conforme descrito na nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
-<p>Para solicitar a exclusão, envie um email para <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a> com o assunto "Exclusão de Conta".</p>
-<p>Antes de solicitar a exclusão, certifique-se de cancelar assinaturas ativas diretamente na Google Play Store ou Apple App Store.</p>
+<p>Para solicitar a exclusão, envie um email para <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a> com o assunto "Exclusão de Conta". Para mais detalhes, consulte nossa <a href="account-deletion.html">página de exclusão de conta</a>.</p>
 
-<h2 id="alteracoes">11. Alterações nos Termos</h2>
+<h2 id="pt-alteracoes">11. Alterações nos Termos</h2>
 <p>O Meritíssimo poderá modificar estes Termos de Uso a qualquer momento. Em caso de alterações significativas:</p>
 <ul>
   <li>Atualizaremos a data de "Última atualização" no topo desta página.</li>
   <li>Notificaremos os usuários por meio do aplicativo ou por email, quando aplicável.</li>
 </ul>
-<p>O uso continuado do aplicativo após a publicação das alterações constitui aceitação dos novos termos. Caso não concorde com as alterações, você deverá cessar o uso do aplicativo e, se desejar, solicitar a exclusão da sua conta.</p>
+<p>O uso continuado do aplicativo após a publicação das alterações constitui aceitação dos novos termos.</p>
 
-<h2 id="lei">12. Lei Aplicável e Foro</h2>
+<h2 id="pt-lei">12. Lei Aplicável e Foro</h2>
 <p>Estes Termos de Uso são regidos pelas leis da <strong>República Federativa do Brasil</strong>.</p>
 <p>Fica eleito o foro da comarca de <strong>Jaraguá do Sul - SC</strong> para dirimir quaisquer controvérsias decorrentes destes termos, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
 
-<h2 id="contato">13. Contato</h2>
+<h2 id="pt-contato">13. Contato</h2>
 <p>Se você tiver dúvidas ou sugestões sobre estes Termos de Uso, entre em contato:</p>
 <ul>
   <li><strong>Email:</strong> <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a></li>
 </ul>
+
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="lang-section" id="lang-en">
+
+<h1>Terms of Use</h1>
+<p class="subtitle">Last updated: March 15, 2026</p>
+
+<div class="toc">
+  <div class="toc-title">Table of Contents</div>
+  <ol>
+    <li><a href="#en-acceptance">Acceptance of Terms</a></li>
+    <li><a href="#en-service">Service Description</a></li>
+    <li><a href="#en-account">Registration and Account</a></li>
+    <li><a href="#en-use">Permitted Use</a></li>
+    <li><a href="#en-ip">Intellectual Property</a></li>
+    <li><a href="#en-purchases">Purchases and Subscriptions</a></li>
+    <li><a href="#en-content">Game Content</a></li>
+    <li><a href="#en-liability">Limitation of Liability</a></li>
+    <li><a href="#en-suspension">Suspension and Termination</a></li>
+    <li><a href="#en-deletion">Account Deletion</a></li>
+    <li><a href="#en-changes">Changes to Terms</a></li>
+    <li><a href="#en-law">Governing Law and Jurisdiction</a></li>
+    <li><a href="#en-contact">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="en-acceptance">1. Acceptance of Terms</h2>
+<p>By downloading, installing, or using the <strong>Meritíssimo</strong> application, you fully agree to these Terms of Use, as well as our <a href="politica-de-privacidade.html">Privacy Policy</a>. If you do not agree with any provision of these terms, do not use the application.</p>
+<p>These terms constitute a legal agreement between you (hereinafter "User") and <strong>Meritíssimo Ltda</strong> (hereinafter "Meritíssimo" or "we").</p>
+
+<h2 id="en-service">2. Service Description</h2>
+<p>Meritíssimo is a <strong>legal simulation game application</strong> that offers interactive collaborative courtroom experiences. The app allows players to:</p>
+<ul>
+  <li>Create and join themed game rooms with legal scenarios.</li>
+  <li>Assume roles such as judge, prosecutor, defense attorney, defendant, witness, and juror.</li>
+  <li>Analyze evidence, present arguments, and vote on verdicts.</li>
+  <li>Join rooms via QR Code scanning.</li>
+</ul>
+<p>Meritíssimo is an <strong>entertainment game</strong>. All scenarios presented are entirely fictional and do not constitute legal advice.</p>
+
+<h2 id="en-account">3. Registration and Account</h2>
+<p>To use the application, you may:</p>
+<ul>
+  <li>Create an account with email and password.</li>
+  <li>Log in with Google Sign-In or Apple Sign-In.</li>
+  <li>Participate as a guest (with limited features).</li>
+</ul>
+<p>When creating an account, you agree to:</p>
+<ul>
+  <li>Provide truthful and up-to-date information.</li>
+  <li>Maintain the confidentiality of your access credentials.</li>
+  <li>Be responsible for all activities performed with your account.</li>
+  <li>Notify us immediately in case of unauthorized use of your account.</li>
+</ul>
+
+<h2 id="en-use">4. Permitted Use</h2>
+<p>When using Meritíssimo, you agree <strong>not</strong> to:</p>
+<ul>
+  <li>Use the app for illegal purposes or purposes contrary to good faith and public order.</li>
+  <li>Disseminate racist, xenophobic, pornographic content, or content that promotes terrorism or violates human rights.</li>
+  <li>Attempt to decompile, reverse engineer, or modify the app's source code.</li>
+  <li>Use bots, automated scripts, or any means to gain an unfair advantage in the game.</li>
+  <li>Interfere with other players' experience through abusive or offensive behavior.</li>
+  <li>Attempt to access other users' data without authorization.</li>
+  <li>Cause damage to the systems (hardware and software) of Meritíssimo, its suppliers, or third parties.</li>
+</ul>
+
+<h2 id="en-ip">5. Intellectual Property</h2>
+<p>All intellectual property rights related to Meritíssimo, including but not limited to:</p>
+<ul>
+  <li>Application source code</li>
+  <li>User interface and design</li>
+  <li>Legal scenarios and cases (scripts, characters, evidence)</li>
+  <li>Brand, logo, and visual identity</li>
+  <li>Texts, images, and other content</li>
+</ul>
+<p>Are the exclusive property of <strong>Meritíssimo Ltda</strong> or its licensors and are protected by Brazilian copyright and intellectual property laws.</p>
+<p>The user is granted a <strong>limited, personal, non-exclusive, non-transferable, and revocable license</strong> to use the application in accordance with these terms.</p>
+
+<h2 id="en-purchases">6. Purchases and Subscriptions</h2>
+<p>Meritíssimo may offer additional content and features through in-app purchases and subscriptions.</p>
+<ul>
+  <li>All purchases are processed by the <strong>Google Play Store</strong> or <strong>Apple App Store</strong>, depending on the platform used.</li>
+  <li>Subscription management is handled by <strong>RevenueCat</strong>.</li>
+  <li>Prices are displayed in local currency before purchase confirmation.</li>
+  <li>Subscriptions renew automatically unless canceled by the user before the end of the current period.</li>
+  <li>To cancel a subscription, access your account settings in the Google Play Store or Apple App Store.</li>
+  <li>The refund policy follows the rules of the respective app store.</li>
+</ul>
+
+<h2 id="en-content">7. Game Content</h2>
+<p><strong>Important notice:</strong> All scenarios, cases, characters, evidence, and situations presented in Meritíssimo are <strong>entirely fictional</strong> and created exclusively for entertainment purposes.</p>
+<ul>
+  <li>Any resemblance to real persons, living or deceased, real events, or situations is purely coincidental.</li>
+  <li>Game content <strong>does not constitute</strong> legal advice, legal guidance, or representation of actual judicial proceedings.</li>
+  <li>Meritíssimo is not responsible for the use of information presented in the game outside the context of entertainment.</li>
+</ul>
+
+<h2 id="en-liability">8. Limitation of Liability</h2>
+<p>To the maximum extent permitted by applicable law:</p>
+<ul>
+  <li>Meritíssimo is provided "as is," without warranties of any kind, express or implied.</li>
+  <li>We do not guarantee that the app will be available uninterrupted, error-free, or that it will meet all your expectations.</li>
+  <li>We shall not be liable for indirect, incidental, special, or consequential damages arising from the use or inability to use the app.</li>
+  <li>We are not responsible for user-generated content during game sessions.</li>
+</ul>
+
+<h2 id="en-suspension">9. Suspension and Termination</h2>
+<p>We reserve the right to suspend or terminate your account, at our discretion, if:</p>
+<ul>
+  <li>You violate any provision of these Terms of Use.</li>
+  <li>Your behavior negatively impacts other users' experience.</li>
+  <li>There is suspicion of fraudulent or unauthorized use of the account.</li>
+  <li>It is necessary for legal or security reasons.</li>
+</ul>
+<p>In case of suspension or termination, we will notify the user at the registered email address.</p>
+
+<h2 id="en-deletion">10. Account Deletion</h2>
+<p>You may request the deletion of your account at any time, as described in our <a href="politica-de-privacidade.html">Privacy Policy</a>.</p>
+<p>To request deletion, send an email to <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a> with the subject "Account Deletion." For more details, see our <a href="account-deletion.html">account deletion page</a>.</p>
+
+<h2 id="en-changes">11. Changes to Terms</h2>
+<p>Meritíssimo may modify these Terms of Use at any time. In the event of significant changes:</p>
+<ul>
+  <li>We will update the "Last updated" date at the top of this page.</li>
+  <li>We will notify users through the app or by email, when applicable.</li>
+</ul>
+<p>Continued use of the application after changes are published constitutes acceptance of the new terms.</p>
+
+<h2 id="en-law">12. Governing Law and Jurisdiction</h2>
+<p>These Terms of Use are governed by the laws of the <strong>Federative Republic of Brazil</strong>.</p>
+<p>The courts of <strong>Jaraguá do Sul - SC, Brazil</strong> are elected as the exclusive jurisdiction for resolving any disputes arising from these terms.</p>
+
+<h2 id="en-contact">13. Contact</h2>
+<p>If you have questions or suggestions about these Terms of Use, please contact us:</p>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:meritissimo.app@gmail.com">meritissimo.app@gmail.com</a></li>
+</ul>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-section').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.lang-btn').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.getElementById('btn-' + lang).classList.add('active');
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+}
+</script>
 
 </body>
 </html>
